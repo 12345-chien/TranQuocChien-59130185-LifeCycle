@@ -1,0 +1,9 @@
+Câu 4: Khi ứng dụng đang chạy và người dùng ấn phím Back và mở lại ứng dụng thì các phương thức vòng đời lần lượt được gọi ra sau:
+    - Sau khi ấn phím Back: bị che khuất bởi activity này (phím back) thì nó sẽ chuyển qua các trạng thái onPause() -> onStop() -> onDestroy()
+    - Khi mở lại ứng dụng người dùng sẽ chạy lại ứng dụng từ đầu: onCreate() -> onStart() -> onResume()
+Câu 5: Các phương thức vòng đời được gọi khi ứng dụng đang chạy và người sử dụng bấm vào nút Home và sau đó mở lại ứng dụng:
+    - Khi người dùng ấn phím Home: onPause() -> onStop()
+    - Khi mở lại ứng dụng cũng sẽ chạy lại từ đầu: onRestart() -> onStart() -> onResume()
+câu 6: Nếu cần lưu thông tin của ứng dụng để khôi phục lại trạng thái hiển thị của ứng dụng
+khi chạy lại ứng dụng thì cần phải thực hiện trong phương thức vòng đời ///onPause()/// Vì phương thức onPause() luôn luôn được gọi trước khi 
+Activity không còn được nhìn thấy nữa tức destroy.
